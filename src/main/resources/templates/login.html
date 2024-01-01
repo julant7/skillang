@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main.html}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <script src="/js/login.js"></script>
+
+</head>
+<body layout:fragment="content">
+<div class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-6">
+                <h2 class="title text-center mb-2">Skillang</h2>
+                <div class="card">
+                    <div class="card-body p-5">
+                        <form class="mb-2" id="login-form">
+                            <h2 class="title mb-3">Login</h2>
+                            <div data-mdb-input-init class="mb-4 form-outline">
+                                <input name="email" type="email" class="form-control" id="email" autocomplete="username"
+                                       required>
+                                <label for="email" class="form-label ">E-Mail</label>
+                            </div>
+                            <div data-mdb-input-init class="mb-2 form-outline">
+                                <input name="password" type="password" class="form-control" id="password"
+                                       autocomplete="current-password" required>
+                                <label for="password" class="form-label">Password</label>
+                            </div>
+                            <p id="wrong-password" class="text-danger" hidden>Wrong password</p>
+                            <p class="small"><a class="text-primary" href="forget-password.html">Forgot
+                                password?</a>
+                            </p>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+                            </div>
+                        </form>
+                        <div>
+                            <p class="mb-0 text-center">Don't have an account? <a href="/register"
+                                                                                  class="text-primary fw-bold">Sign
+                                Up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<div class="list-group list-group-light card mb-2 p-3 gap-1">
+    <a th:href="@{/finder}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'finder' ? 'active' : ''}">
+        <img src="/svg/magnifying-glass.svg" class="me-2"/> Finder
+    </a>
+    <a th:href="@{/friends}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'friends' ? 'active' : ''}">
+        <img src="/svg/user.svg" class="me-2"/> Friends
+    </a>
+    <a th:href="@{/messages}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'messages' ? 'active' : ''}">
+        <img src="/svg/message.svg" class="me-2"/> Messages
+    </a>
+    <a style="pointer-events: none; opacity: 60%" th:href="@{/settings}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'settings' ? 'active' : ''}">
+        <img src="/svg/gear.svg " class="me-2"/> Settings
+    </a>
+    <a th:href="@{/login}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'settings' ? 'active' : ''}">
+        <img src="/svg/arrow-right-from-bracket-solid.svg" class="me-2"/> Log out
+    </a>
+</div>

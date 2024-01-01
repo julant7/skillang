@@ -1,0 +1,51 @@
+@import url(mdb.css);
+
+@font-face {
+    font-family: 'Fredoka';
+    src: url('/fonts/FredokaOne.ttf') format('truetype');
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #f9fafb;
+    margin: 0;
+    overflow: hidden;
+}
+
+.title {
+    font-family: Fredoka;
+    font-size: 48px;
+    color: #A85CF9;
+    margin: 0;
+}
+
+.logo {
+    font-family: Fredoka;
+    font-size: 28px;
+    color: #A85CF9;
+    margin: 0;
+    text-decoration: none;
+}
+
+
+.sidebar {
+    width: 165px;
+    font-size: 13px;
+}
+
+.menu-outline {
+    box-shadow: -2px 0 0 rgba(var(--mdb-primary-rgb), 1);
+}
+
+#messages-ul {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+#messages-ul::-webkit-scrollbar {
+    display: none;
+}
+
+.fi {
+    border-radius: 3px;
+}

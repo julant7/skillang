@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main.html}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+    <script src="/js/profile.js"></script>
+</head>
+
+<body layout:fragment="content">
+<div class="d-flex align-items-center px-5 h-100 w-100">
+    <div class="row p-4 w-100 h-100 justify-content-center" style="height: fit-content;">
+        <div class="col-2 d-flex flex-column justify-content-between">
+            <div th:with="currentPage='profile'">
+                <div th:replace="~{components/profile-card}"></div>
+                <div th:replace="~{components/menu}"></div>
+            </div>
+
+        </div>
+        <div class="col-4">
+            <div class="card">
+                <div class="rounded-top text-white d-flex flex-row bg-primary" style="height:200px;">
+                    <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px; z-index: 1">
+                        <img src="/images/Placeholder.jpg"
+                             alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                             style="width: 150px; z-index: 1">
+                        <button id="add-friend" class="btn btn-outline-primary">Add friend</button>
+                    </div>
+                    <div class="ms-3" style="margin-top: 130px;">
+                        <div class="d-flex align-content-center">
+                            <h5 id="name" class="mb-0">Name Surname</h5>
+                            <span id="nativeLanguage" class="fi ms-2"></span>
+                            <span id="interestedLanguage" class="fi ms-2"></span>
+                        </div>
+                        <span>Age - </span><span id="age">20</span>
+                    </div>
+                </div>
+                <div id="about-div" class="card-body p-4 text-black mt-5">
+                    <div class="mb-3">
+                        <p class="lead fw-normal mb-1 mt-2">About</p>
+                        <div class="p-4 rounded" style="background-color: #f8f9fa;">
+                            <p id="bio" class="font-italic mb-1"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="list-group list-group-light card mb-3 p-3 gap-1">
+                <button type="button"
+                        class="list-group-item list-group-item-action px-3 border-0 active">
+                    View profile
+                </button>
+                <button id="edit-profile" type="button" class="list-group-item list-group-item-action px-3 border-0"
+                        onclick="window.location.href = '/profile/edit'">
+                    Edit profile
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

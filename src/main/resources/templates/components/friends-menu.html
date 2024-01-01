@@ -1,0 +1,17 @@
+<div class="list-group list-group-light card mb-2 p-3 gap-1">
+    <a th:href="@{/friends}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'friends' ? 'active' : ''}">
+        Friends
+    </a>
+    <a th:href="@{/friends/pending}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'pending' ? 'active' : ''}">
+        Pending
+    </a>
+    <a th:href="@{/friends/outgoing}"
+       class="d-flex align-items-stretch list-group-item list-group-item-action border-bottom-0 px-3"
+       th:classappend="${currentPage == 'outgoing' ? 'active' : ''}">
+        Outgoing
+    </a>
+</div>

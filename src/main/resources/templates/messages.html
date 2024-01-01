@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{main.html}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Messages</title>
+    <script src="/js/messages.js"></script>
+</head>
+
+<body layout:fragment="content">
+<div class="d-flex align-items-center px-5 h-100 w-100">
+    <div class="row p-4 w-100 h-100 justify-content-center" style="height: fit-content;">
+        <div class="col-2 d-flex flex-column justify-content-between">
+            <div th:with="currentPage='messages'">
+                <div th:replace="~{components/profile-card}"></div>
+                <div th:replace="~{components/menu}"></div>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="card h-100">
+                <div class="card-body p-3">
+                    <div id="chats">
+                        <h4 class="card-title">Chats</h4>
+                        <ul class="list-group list-group-light" id="messages-ul">
+                            <template id="chat-template">
+                                <li class="list-group-item d-flex justify-content-between align-items-center"
+                                    style="cursor: pointer">
+                                    <div class="h-100 w-100" id="chat-div">
+                                        <div class="d-flex align-items-center">
+                                            <img src="/images/Placeholder.jpg" alt=""
+                                                 style="width: 45px; height: 45px"
+                                                 class="rounded-circle"/>
+                                            <div class="ms-3">
+                                                <p id="name" class="fw-bold mb-1">Julia Antonova</p>
+                                                <p id="lastMessage" class="text-muted mb-0">message</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                    <div id="chat" hidden>
+                        <div id="chat-box" class="pt-3 pe-3"
+                             style="overflow-y: scroll; height: 80vh">
+
+                            <template id="message-from">
+                                <div class="d-flex flex-row justify-content-start">
+                                    <img src="/images/Placeholder.jpg" class="rounded-circle"
+                                         alt="avatar 1" style="width: 45px; height: 100%;">
+                                    <div>
+                                        <p id="msg-p-from" class="small p-2 ms-3 mb-1 rounded-4" style="background-color: #f5f6f7;">Люблю
+                                    </div>
+                                </div>
+                            </template>
+
+
+                            <template id="message-to">
+                                <div class="d-flex flex-row justify-content-end">
+                                    <div>
+                                        <p id="msg-p-to" class="small p-2 me-3 mb-1 text-white rounded-4 bg-primary">И я люблю арбузы</p>
+                                    </div>
+                                    <img src="/images/Placeholder.jpg" class="rounded-circle"
+                                         alt="avatar 1" style="width: 45px; height: 100%;">
+                                </div>
+                            </template>
+
+                        </div>
+
+                        <form id="message-form" class="text-muted d-flex justify-content-start align-items-center pe-3 pt-3 mt-2" method="POST">
+                            <input name="message" type="text" class="form-control form-control-lg" id="message-field"
+                                   placeholder="Type message">
+                            <button class="ms-3" style="all: unset; cursor: pointer"><img src="/svg/paper-plane.svg" width="24" height="24"/></button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-2">
+            <div class="list-group list-group-light card mb-3 p-3 gap-1">
+                <button type="button"
+                        class="list-group-item list-group-item-action px-3 active"
+                        aria-current="true">
+                    All chats
+                </button>
+                <button disabled type="button" class="list-group-item list-group-item-action px-3 border-0">
+                    Unread
+                </button>
+                <button disabled type="button" class="list-group-item list-group-item-action px-3 border-0">
+                    Archive
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
